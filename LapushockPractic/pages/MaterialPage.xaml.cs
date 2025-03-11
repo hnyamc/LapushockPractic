@@ -1,4 +1,4 @@
-﻿using LapushockPractic.BD;
+﻿using LapushockPractic.DB;
 using LapushockPractic.Frames;
 using System;
 using System.Collections.Generic;
@@ -149,10 +149,6 @@ namespace LapushockPractic.Pages
                     .Where(x => x.ID_type == SearchTypeCB.SelectedIndex && x.Name.StartsWith(SearchTB.Text.Trim())).ToList();
                 MaterialListLW.ItemsSource = list;
             }
-
-
-            //ProductListLW.ItemsSource = App.db.Product.Include("ProductMaterial.Material")
-            //    .OrderBy(x => x.ID).Skip(result).Take(20).Where(x => x.Name.StartsWith(SearchTB.Text.Trim())).ToList();
         }
     }
 }

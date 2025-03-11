@@ -1,4 +1,4 @@
-﻿using LapushockPractic.BD;
+﻿using LapushockPractic.DB;
 using LapushockPractic.Frames;
 using System.Linq;
 using System.Windows;
@@ -34,20 +34,17 @@ namespace LapushockPractic.Pages
                 countPage = App.db.Product.Count() / 20 + 1;
             }
             SumCost();
-            //ProductListLW.ItemsSource = App.db.Product.Include("ProductMaterial.Material").OrderBy(x => x.ID).Skip(result).Take(20).ToList();
         }
         private void SumCost()
         {
             var products = App.db.Product
-            .Include("ProductMaterial.Material") // Загружаем связку продукт-материал
+            .Include("ProductMaterial.Material") 
             .ToList();
 
-            // Для каждого продукта считаем общую стоимость материалов
             foreach (var product in products)
             {
                 if (product.ProductMaterial != null && product.ProductMaterial.Any())
                 {
-                    // Если материалы есть, считаем общую стоимость
                     product.MinCost = product.ProductMaterial.Sum(pm => pm.Material.Cost * pm.Count);
                 }
             }
@@ -162,10 +159,6 @@ namespace LapushockPractic.Pages
                     .Where(x => x.ID_type == SearchTypeCB.SelectedIndex && x.Name.StartsWith(SearchTB.Text.Trim())).ToList();
                 ProductListLW.ItemsSource = list;
             }
-           
-
-            //ProductListLW.ItemsSource = App.db.Product.Include("ProductMaterial.Material")
-            //    .OrderBy(x => x.ID).Skip(result).Take(20).Where(x => x.Name.StartsWith(SearchTB.Text.Trim())).ToList();
         }
     }
 }

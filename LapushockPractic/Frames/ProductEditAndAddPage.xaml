@@ -13,7 +13,7 @@
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <TextBlock Style="{DynamicResource 'H1'}" x:Name="MainNameFrame">Добавление продукта</TextBlock>
-        <Button HorizontalAlignment="Right" Click="Button_Click_Close" >Закрыть</Button>
+        <Button HorizontalAlignment="Right" Click="Button_Click_Close" Height="40">Закрыть</Button>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <StackPanel>
                 <TextBlock>Название</TextBlock>
@@ -21,8 +21,7 @@
                 <TextBlock>Минемальная цена</TextBlock>
                 <TextBlock>Количество сотрудников</TextBlock>
                 <TextBlock>Номер цеха</TextBlock>
-                <TextBlock>Тип продукта</TextBlock>
-                <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 10" Click="Button_Click_SaveProduct">Сохранить</Button>
+                <TextBlock Margin="5 20">Тип продукта</TextBlock>
             </StackPanel>
             <StackPanel Width="300">
                 <TextBox x:Name="NameProdTB"></TextBox>
@@ -31,6 +30,9 @@
                 <TextBox x:Name="CountPeopleTB"></TextBox>
                 <TextBox x:Name="ShopNumberTB"></TextBox>
                 <ComboBox x:Name="TypeProdCB" DisplayMemberPath="Name" Margin="5"></ComboBox>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Margin="10 0 0 30">
+                <Button VerticalAlignment="Bottom"  Click="Button_Click_SaveProduct">Сохранить</Button>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" x:Name="EditPanelST">

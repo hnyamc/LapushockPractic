@@ -1,4 +1,4 @@
-﻿using LapushockPractic.BD;
+﻿using LapushockPractic.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,11 +65,10 @@ namespace LapushockPractic.Frames
         {
             if (ItemsListMaterialLW.SelectedItem is ProductMaterial selectedMaterial)
             {
-                // Удаление из базы данных
                 try
                 {
-                    App.db.ProductMaterial.Remove(selectedMaterial); // Удаляем элемент из таблицы
-                    App.db.SaveChanges(); // Сохраняем изменения в базе данных
+                    App.db.ProductMaterial.Remove(selectedMaterial); 
+                    App.db.SaveChanges(); 
                     RefreshList();
                     MessageBox.Show("Материал усешно удалён!!");
                 }

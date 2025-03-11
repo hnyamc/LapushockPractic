@@ -19,7 +19,22 @@
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="Background" Value="#CEFFF9"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#00CC76"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            CornerRadius="10">
+                            <!-- Закруглённые углы -->
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Application.Resources>
 </Application>

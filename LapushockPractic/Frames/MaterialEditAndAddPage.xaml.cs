@@ -1,4 +1,4 @@
-﻿using LapushockPractic.BD;
+﻿using LapushockPractic.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;

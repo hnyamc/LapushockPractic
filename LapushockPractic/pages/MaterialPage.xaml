@@ -89,9 +89,9 @@
             </Hyperlink>
                 </TextBlock>
             </StackPanel>
-            <StackPanel Grid.Row="2" HorizontalAlignment="Left" Margin="5 0" Orientation="Horizontal">
-                <Button Margin="5 0 10 5" Click="Button_Click_Back">Назад</Button>
-                <Button Margin="5 0 10 5" Click="Button_Click_AddProduct">Добавить</Button>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="5 0" Orientation="Horizontal">
+                <Button Margin="5 0 10 5" Click="Button_Click_Back" Width="100">Назад</Button>
+                <Button Margin="5 0 10 5" Click="Button_Click_AddProduct" Width="100">Добавить</Button>
             </StackPanel>
         </Grid>
     </Grid>
