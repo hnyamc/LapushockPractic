@@ -1,0 +1,97 @@
+﻿<Page x:Class="LapushockPractic.Pages.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LapushockPractic.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+            <TextBlock Margin="5 10">Поиск:</TextBlock>
+            <TextBox Width="200" Margin="5" x:Name="SearchTB" TextChanged="SearchTB_TextChanged" />
+            <ComboBox DisplayMemberPath="Name" x:Name="SearchTypeCB" Width="200" Margin="5" SelectionChanged="SearchTypeCB_SelectionChanged"></ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <ListView Background="#eed4fe" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  x:Name="ProductListLW"  Width="730" Height="300" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ProductListLW_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="700" Height="165">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="165"/>
+                        </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25*"/>
+                                <ColumnDefinition Width="55*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="{Binding Image}" />
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0">
+                                <StackPanel>
+                                    <TextBlock  Text="{Binding TypeProduct.Name}" TextWrapping="Wrap"></TextBlock>
+                                    <TextBlock  Text="{Binding Name}" TextWrapping="Wrap"></TextBlock>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock  Text="{Binding Article}" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical">
+                                    <ItemsControl ItemsSource="{Binding ProductMaterial}">
+                                        <ItemsControl.ItemTemplate >
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Material.Name}"></TextBlock>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Vertical"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock  Text="{Binding MinCost}"></TextBlock>
+                            </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 50 0">
+            <TextBlock >
+                <Hyperlink Click="Hyperlink_Click_Back">
+                    &lt;
+                </Hyperlink>
+            </TextBlock>
+            <TextBlock x:Name="IndexPageTB">
+                <Hyperlink >
+                    1
+                </Hyperlink>
+            </TextBlock>
+            <TextBlock >
+                <Hyperlink Click="Hyperlink_Click_Next">
+                    &gt;
+                </Hyperlink>    
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Left" Margin="5 0" Orientation="Horizontal">
+            <Button Margin="5 0 10 5" Click="Button_Click_Back">Назад</Button>
+            <Button Margin="5 0 10 5" Click="Button_Click_AddProduct">Добавить</Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,59 @@
+﻿<Window x:Class="LapushockPractic.Frames.ProductEditAndAddPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LapushockPractic.Frames"
+        mc:Ignorable="d"
+        Title="SettingProduct" Height="680" Width="700" Icon="/Images/Лопушок.ico">
+    <Grid x:Name="MyGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12.5*"/>
+            <RowDefinition Height="37.5*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{DynamicResource 'H1'}" x:Name="MainNameFrame">Добавление продукта</TextBlock>
+        <Button HorizontalAlignment="Right" Click="Button_Click_Close" >Закрыть</Button>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel>
+                <TextBlock>Название</TextBlock>
+                <TextBlock>Артикул</TextBlock>
+                <TextBlock>Минемальная цена</TextBlock>
+                <TextBlock>Количество сотрудников</TextBlock>
+                <TextBlock>Номер цеха</TextBlock>
+                <TextBlock>Тип продукта</TextBlock>
+                <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 10" Click="Button_Click_SaveProduct">Сохранить</Button>
+            </StackPanel>
+            <StackPanel Width="300">
+                <TextBox x:Name="NameProdTB"></TextBox>
+                <TextBox x:Name="ArticlTB"></TextBox>
+                <TextBox x:Name="MinCostTB"></TextBox>
+                <TextBox x:Name="CountPeopleTB"></TextBox>
+                <TextBox x:Name="ShopNumberTB"></TextBox>
+                <ComboBox x:Name="TypeProdCB" DisplayMemberPath="Name" Margin="5"></ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" x:Name="EditPanelST">
+            <ListView x:Name="ItemsListMaterialLW" Margin="10" Height="220" VerticalAlignment="Top">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Material.Name}" Width="400"/>
+                        <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Count}" Width="130"/>
+                        <GridViewColumn Header="Действие" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Удалить" Click="DeleteButton_Click" Tag="{Binding}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel  VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+                <ComboBox Width="220" Margin="5" x:Name="ItemsMaterialCB"></ComboBox>
+                <TextBox Width="150" x:Name="CountMaterialItemTB"></TextBox>
+                <Button Margin="5" Click="Button_Click_AddMaterial">Добавить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

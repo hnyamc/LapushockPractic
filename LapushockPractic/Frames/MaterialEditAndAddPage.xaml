@@ -1,0 +1,40 @@
+﻿<Window x:Class="LapushockPractic.Frames.MaterialEditAndAddPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LapushockPractic.Frames"
+        mc:Ignorable="d"
+        Title="SettingMaterial" Height="380" Width="700" Icon="/Images/Лопушок.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{DynamicResource 'H1'}" x:Name="MainNameFrame">Добавление продукта</TextBlock>
+        <Button HorizontalAlignment="Right" Click="Button_Click_Close">Закрыть</Button>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel>
+                <TextBlock>Название</TextBlock>
+                <TextBlock>Кол-во в 1 упаковке</TextBlock>
+                <TextBlock>Еденица измерения</TextBlock>
+                <TextBlock>Количество на складе</TextBlock>
+                <TextBlock>Мин возможный остаток</TextBlock>
+                <TextBlock>Цена</TextBlock>
+                <TextBlock Margin="0 20">Тип материала</TextBlock>
+            </StackPanel>
+            <StackPanel Width="300">
+                <TextBox x:Name="NameMaterialTB"></TextBox>
+                <TextBox x:Name="CountInPackageTB"></TextBox>
+                <TextBox x:Name="UnitOfMeasurementTB"></TextBox>
+                <TextBox x:Name="CountInWarehourseTB"></TextBox>
+                <TextBox x:Name="MinRemainderTB"></TextBox>
+                <TextBox x:Name="CostMaterialTB"></TextBox>
+                <ComboBox x:Name="TypeMaterialCB" DisplayMemberPath="Name" Margin="5"></ComboBox>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                 <Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10" Click="Button_Click_SaveProduct">Сохранить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -13,5 +13,6 @@ namespace LapushockPractic
     /// </summary>
     public partial class App : Application
     {
+        public static LopushokEntities db = new LopushokEntities();
     }
 }
