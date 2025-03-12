@@ -94,11 +94,6 @@ namespace LapushockPractic.Pages
 
 
 
-        private void Button_Click_Back(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Pages.NavigationPage());
-        }
-
         private void Button_Click_AddProduct(object sender, RoutedEventArgs e)
         {
             MaterialEditAndAddPage editAddPage = new MaterialEditAndAddPage();

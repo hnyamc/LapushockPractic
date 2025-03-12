@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a86457d4e6004d5587646b6162d4583e" Name="Diagram1">
-        <EntityTypeShape EntityType="LopushokRamilModel.Material" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="LopushokRamilModel.Product" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LopushokRamilModel.ProductMaterial" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LopushokRamilModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LopushokRamilModel.TypeMaterial" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LopushokRamilModel.TypeProduct" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="LopushokRamilModel.FK_Material_TypeMaterial" ManuallyRouted="false" />
-        <AssociationConnector Association="LopushokRamilModel.FK_ProductMaterial_Material" ManuallyRouted="false" />
-        <AssociationConnector Association="LopushokRamilModel.FK_Product_TypeProduct1" ManuallyRouted="false" />
-        <AssociationConnector Association="LopushokRamilModel.FK_ProductMaterial_Product" ManuallyRouted="false" />
+      <Diagram DiagramId="86a38e8d9f5f4d929354ef7a73a931e1" Name="Diagram1">
+        <EntityTypeShape EntityType="LopushokModel.Material" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LopushokModel.Product" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LopushokModel.ProductMaterial" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LopushokModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LopushokModel.TypeMaterial" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LopushokModel.TypeProduct" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="LopushokModel.FK_Material_TypeMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="LopushokModel.FK_ProductMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="LopushokModel.FK_Product_TypeProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="LopushokModel.FK_ProductMaterial_Product" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

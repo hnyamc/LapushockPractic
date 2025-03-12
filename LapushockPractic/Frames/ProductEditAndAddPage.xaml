@@ -14,34 +14,38 @@
         </Grid.RowDefinitions>
         <TextBlock Style="{DynamicResource 'H1'}" x:Name="MainNameFrame">Добавление продукта</TextBlock>
         <Button HorizontalAlignment="Right" Click="Button_Click_Close" Height="40">Закрыть</Button>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel>
                 <TextBlock>Название</TextBlock>
                 <TextBlock>Артикул</TextBlock>
                 <TextBlock>Минемальная цена</TextBlock>
+            </StackPanel>
+            <StackPanel Width="130">
+                <TextBox x:Name="NameProdTB"></TextBox>
+                <TextBox x:Name="ArticlTB"></TextBox>
+                <TextBox x:Name="MinCostTB"></TextBox>
+            </StackPanel>
+            <StackPanel>
                 <TextBlock>Количество сотрудников</TextBlock>
                 <TextBlock>Номер цеха</TextBlock>
                 <TextBlock Margin="5 20">Тип продукта</TextBlock>
             </StackPanel>
-            <StackPanel Width="300">
-                <TextBox x:Name="NameProdTB"></TextBox>
-                <TextBox x:Name="ArticlTB"></TextBox>
-                <TextBox x:Name="MinCostTB"></TextBox>
+            <StackPanel Width="130">
                 <TextBox x:Name="CountPeopleTB"></TextBox>
                 <TextBox x:Name="ShopNumberTB"></TextBox>
                 <ComboBox x:Name="TypeProdCB" DisplayMemberPath="Name" Margin="5"></ComboBox>
             </StackPanel>
-            <StackPanel VerticalAlignment="Bottom" Margin="10 0 0 30">
-                <Button VerticalAlignment="Bottom"  Click="Button_Click_SaveProduct">Сохранить</Button>
-            </StackPanel>
         </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1">
+                <Button VerticalAlignment="Bottom"  Width="250" Click="Button_Click_SaveProduct">Сохранить</Button>
+            </StackPanel>
         <StackPanel Grid.Row="2" x:Name="EditPanelST">
             <ListView x:Name="ItemsListMaterialLW" Margin="10" Height="220" VerticalAlignment="Top">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Material.Name}" Width="400"/>
                         <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Count}" Width="130"/>
-                        <GridViewColumn Header="Действие" Width="100">
+                        <GridViewColumn Header="Действие" Width="140">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Content="Удалить" Click="DeleteButton_Click" Tag="{Binding}"/>
@@ -54,7 +58,7 @@
             <StackPanel  VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
                 <ComboBox Width="220" Margin="5" x:Name="ItemsMaterialCB"></ComboBox>
                 <TextBox Width="150" x:Name="CountMaterialItemTB"></TextBox>
-                <Button Margin="5" Click="Button_Click_AddMaterial">Добавить</Button>
+                <Button Margin="5" Click="Button_Click_AddMaterial" Width="200">Добавить</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

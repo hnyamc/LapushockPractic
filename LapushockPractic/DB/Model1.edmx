@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище LopushokRamilModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище LopushokModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Material">
           <Key>
             <PropertyRef Name="ID" />
@@ -78,7 +78,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Product_TypeProduct1">
+        <Association Name="FK_Product_TypeProduct">
           <End Role="TypeProduct" Type="Self.TypeProduct" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -114,7 +114,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище LopushokRamilModelContainer">
+        <EntityContainer Name="Хранилище LopushokModelContainer">
           <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductMaterial" EntityType="Self.ProductMaterial" Schema="dbo" store:Type="Tables" />
@@ -125,7 +125,7 @@
             <End Role="TypeMaterial" EntitySet="TypeMaterial" />
             <End Role="Material" EntitySet="Material" />
           </AssociationSet>
-          <AssociationSet Name="FK_Product_TypeProduct1" Association="Self.FK_Product_TypeProduct1">
+          <AssociationSet Name="FK_Product_TypeProduct" Association="Self.FK_Product_TypeProduct">
             <End Role="TypeProduct" EntitySet="TypeProduct" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
@@ -142,7 +142,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LopushokRamilModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="LopushokModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Material">
           <Key>
             <PropertyRef Name="ID" />
@@ -172,7 +172,7 @@
           <Property Name="ShopNumber" Type="Int32" />
           <Property Name="ID_type" Type="Int32" />
           <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="TypeProduct" Relationship="Self.FK_Product_TypeProduct1" FromRole="Product" ToRole="TypeProduct" />
+          <NavigationProperty Name="TypeProduct" Relationship="Self.FK_Product_TypeProduct" FromRole="Product" ToRole="TypeProduct" />
           <NavigationProperty Name="ProductMaterial" Relationship="Self.FK_ProductMaterial_Product" FromRole="Product" ToRole="ProductMaterial" />
         </EntityType>
         <EntityType Name="ProductMaterial">
@@ -210,7 +210,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Product" Relationship="Self.FK_Product_TypeProduct1" FromRole="TypeProduct" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_TypeProduct" FromRole="TypeProduct" ToRole="Product" />
         </EntityType>
         <Association Name="FK_Material_TypeMaterial">
           <End Role="TypeMaterial" Type="Self.TypeMaterial" Multiplicity="0..1" />
@@ -236,7 +236,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Product_TypeProduct1">
+        <Association Name="FK_Product_TypeProduct">
           <End Role="TypeProduct" Type="Self.TypeProduct" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -275,7 +275,7 @@
             <End Role="Material" EntitySet="Material" />
             <End Role="ProductMaterial" EntitySet="ProductMaterial" />
           </AssociationSet>
-          <AssociationSet Name="FK_Product_TypeProduct1" Association="Self.FK_Product_TypeProduct1">
+          <AssociationSet Name="FK_Product_TypeProduct" Association="Self.FK_Product_TypeProduct">
             <End Role="TypeProduct" EntitySet="TypeProduct" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
@@ -289,9 +289,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище LopushokRamilModelContainer" CdmEntityContainer="LopushokEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище LopushokModelContainer" CdmEntityContainer="LopushokEntities">
           <EntitySetMapping Name="Material">
-            <EntityTypeMapping TypeName="LopushokRamilModel.Material">
+            <EntityTypeMapping TypeName="LopushokModel.Material">
               <MappingFragment StoreEntitySet="Material">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -306,7 +306,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
-            <EntityTypeMapping TypeName="LopushokRamilModel.Product">
+            <EntityTypeMapping TypeName="LopushokModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -321,7 +321,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductMaterial">
-            <EntityTypeMapping TypeName="LopushokRamilModel.ProductMaterial">
+            <EntityTypeMapping TypeName="LopushokModel.ProductMaterial">
               <MappingFragment StoreEntitySet="ProductMaterial">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_prod" ColumnName="ID_prod" />
@@ -331,7 +331,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="LopushokRamilModel.sysdiagrams">
+            <EntityTypeMapping TypeName="LopushokModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -342,7 +342,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TypeMaterial">
-            <EntityTypeMapping TypeName="LopushokRamilModel.TypeMaterial">
+            <EntityTypeMapping TypeName="LopushokModel.TypeMaterial">
               <MappingFragment StoreEntitySet="TypeMaterial">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -350,7 +350,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TypeProduct">
-            <EntityTypeMapping TypeName="LopushokRamilModel.TypeProduct">
+            <EntityTypeMapping TypeName="LopushokModel.TypeProduct">
               <MappingFragment StoreEntitySet="TypeProduct">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

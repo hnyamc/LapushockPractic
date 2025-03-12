@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using System.Data.Entity;
 namespace LapushockPractic.Pages
 {
     /// <summary>
@@ -103,10 +102,6 @@ namespace LapushockPractic.Pages
 
 
 
-        private void Button_Click_Back(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Pages.NavigationPage());
-        }
 
         private void Button_Click_AddProduct(object sender, RoutedEventArgs e)
         {

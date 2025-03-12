@@ -23,7 +23,7 @@ namespace LapushockPractic
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.NavigationService.Navigate(new Pages.NavigationPage());
+            MainFrame.NavigationService.Navigate(new Pages.ProductPage());
         }
     }
 }

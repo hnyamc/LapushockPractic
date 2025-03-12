@@ -14,16 +14,16 @@
             <RowDefinition Height="75*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Left" Margin="40 0">
             <TextBlock Margin="5 10">Поиск:</TextBlock>
             <TextBox Width="200" Margin="5" x:Name="SearchTB" TextChanged="SearchTB_TextChanged" />
             <ComboBox DisplayMemberPath="Name" x:Name="SearchTypeCB" Width="200" Margin="5" SelectionChanged="SearchTypeCB_SelectionChanged"></ComboBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <ListView Background="#eed4fe" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  x:Name="ProductListLW"  Width="730" Height="300" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ProductListLW_SelectionChanged">
+            <ListView Background="#00CC76" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  x:Name="ProductListLW"  Width="730" Height="300" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ProductListLW_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="700" Height="165">
+                        <Grid Width="700" Height="165" Background="#FFFFFF">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="165"/>
                         </Grid.RowDefinitions>
@@ -90,8 +90,7 @@
             </TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="5 0" Orientation="Horizontal">
-            <Button Margin="5 0 10 5" Click="Button_Click_Back" Width="100">Назад</Button>
-            <Button Margin="5 0 10 5" Click="Button_Click_AddProduct" Width="100">Добавить</Button>
+            <Button Margin="5 0 10 5" Click="Button_Click_AddProduct" Width="250">Добавить</Button>
         </StackPanel>
     </Grid>
 </Page>
